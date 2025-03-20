@@ -1,0 +1,12 @@
+id: db_staging
+title: "Staging Database Configuration"
+description: "Configuration for the staging database environment"
+version: "1.0.0"
+type: database
+environment: staging
+config:
+  host: "staging-db.example.com"
+  port: 5432
+  name: "myapp_staging"
+  user: "staging_user"
+  password: "staging_secret" 

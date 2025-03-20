@@ -1,0 +1,12 @@
+id: api_production
+title: "Production API Configuration"
+description: "Configuration for the production API environment"
+version: "1.0.0"
+type: api
+environment: production
+config:
+  host: "api.example.com"
+  port: 443
+  ssl: true
+  rate_limit: 1000
+  timeout: 30 

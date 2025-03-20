@@ -1,0 +1,19 @@
+id: "node1"
+title: "Node 1"
+description: "This is node 1"
+version: "1.0.0"
+tags:
+  - "node"
+  - "api"
+  - "config"
+  - "yaml"
+  - "go"
+
+fields:
+  - name: "Prompt"
+    type: "string"
+    description: "The prompt for the app"
+    default: "Hello, world!"
+  - name: "Temperature"
+    type: "number"
+    description: "The temperature for the app"

@@ -1,0 +1,12 @@
+id: db_production
+title: "Production Database Configuration"
+description: "Configuration for the production database environment"
+version: "1.0.0"
+type: database
+environment: production
+config:
+  host: "prod-db.example.com"
+  port: 5432
+  name: "myapp_prod"
+  user: "prod_user"
+  password: "prod_secret" 
