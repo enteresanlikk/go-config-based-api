@@ -8,8 +8,10 @@ tags:
   - "config"
   - "yaml"
   - "go"
+deprecation:
+  status: false
 
-fields:
+schema:
   - name: "Prompt"
     type: "string"
     description: "The prompt for the app"

@@ -2,6 +2,8 @@ id: db_production
 title: "Production Database Configuration"
 description: "Configuration for the production database environment"
 version: "1.0.0"
+deprecation:
+  status: false
 type: database
 environment: production
 config:

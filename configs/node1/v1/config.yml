@@ -9,7 +9,12 @@ tags:
   - "yaml"
   - "go"
 
-fields:
+deprecation:
+  status: true
+  at: "2024-03-15T00:00:00Z"
+  reason: "Moving to new node 1 with enhanced security features"
+
+schema:
   - name: "Prompt"
     type: "string"
     description: "The prompt for the app"
@@ -17,3 +22,5 @@ fields:
   - name: "Temperature"
     type: "number"
     description: "The temperature for the app"
+    default: 0.5
+

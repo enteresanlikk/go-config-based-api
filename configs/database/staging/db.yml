@@ -2,6 +2,10 @@ id: db_staging
 title: "Staging Database Configuration"
 description: "Configuration for the staging database environment"
 version: "1.0.0"
+deprecation:
+  status: true
+  at: "2024-03-15T00:00:00Z"
+  reason: "Moving to new staging environment with enhanced security features"
 type: database
 environment: staging
 config:

@@ -2,16 +2,25 @@ package config
 
 import (
 	"fmt"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
 
+// DeprecationInfo represents deprecation metadata
+type DeprecationInfo struct {
+	Status bool      `yaml:"status"`
+	At     time.Time `yaml:"at,omitempty"`
+	Reason string    `yaml:"reason,omitempty"`
+}
+
 // ConfigMetadata represents the required fields for all config files
 type ConfigMetadata struct {
-	ID          string `yaml:"id"`
-	Title       string `yaml:"title"`
-	Description string `yaml:"description"`
-	Version     string `yaml:"version"`
+	ID          string          `yaml:"id"`
+	Title       string          `yaml:"title"`
+	Description string          `yaml:"description"`
+	Version     string          `yaml:"version"`
+	Deprecation DeprecationInfo `yaml:"deprecation"`
 }
 
 // ValidateConfig validates the required fields in a YAML config
@@ -35,6 +44,17 @@ func ValidateConfig(data []byte) error {
 	}
 	if metadata.Version == "" {
 		return fmt.Errorf("missing required field: version")
+	}
+
+	// Validate deprecated_at if deprecated is true
+	if metadata.Deprecation.Status {
+		if metadata.Deprecation.Reason == "" {
+			return fmt.Errorf("deprecation.reason must be set when deprecation.status is true")
+		}
+
+		if metadata.Deprecation.At.IsZero() {
+			return fmt.Errorf("deprecation.at must be set when deprecation.status is true")
+		}
 	}
 
 	return nil

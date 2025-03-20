@@ -2,6 +2,8 @@ id: api_production
 title: "Production API Configuration"
 description: "Configuration for the production API environment"
 version: "1.0.0"
+deprecation:
+  status: false
 type: api
 environment: production
 config:
